@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test name="grouping_tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <exclude name = "regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Annot1"/>
+            <class name="Annot2"/>
+        </classes>
+
+
+    </test>
+</suite>

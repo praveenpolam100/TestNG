@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test name="Run Methods">
+
+
+        <classes>
+           <class name="Annot1">
+            <methods>
+                <include name="tesT1Annot1"/>
+                <exclude name="tesT1Annot2"/>
+            </methods>
+           </class>
+            <class name="Annot2">
+
+            </class>
+        </classes>
+
+
+
+    </test>
+</suite>
