@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools{
+        maven 'Maven 3.8.6'
+    }
     stages{
         stage('Build'){
             steps{
@@ -10,7 +13,10 @@ pipeline{
         stage('test'){
             steps{
                 echo 'Running Tests....'
-                sh 'mvn clean test'
+                timeout(time:10, units: 'MINUTES'){
+                    sh 'mvn clean test'
+                }
+
             }
 
         }
