@@ -2,13 +2,13 @@ pipeline{
     agent any
     stages{
         stage('Build'){
-            step{
+            steps{
                 echo 'Building ....'
             }
 
         }
         stage('test'){
-            step{
+            steps{
                 echo 'Running Tests....'
                 sh mvn clean test
             }

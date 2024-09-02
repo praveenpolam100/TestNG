@@ -3,8 +3,6 @@
 <suite name="All Test Suite">
 
     <test name="Run Methods">
-
-
         <classes>
            <class name="Annot1">
             <methods>
@@ -13,11 +11,7 @@
             </methods>
            </class>
             <class name="Annot2">
-
             </class>
         </classes>
-
-
-
     </test>
 </suite>

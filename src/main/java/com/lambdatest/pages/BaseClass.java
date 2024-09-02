@@ -32,8 +32,9 @@ public class BaseClass {
         driver.quit();
     }
 
-    @Parameters({"URL"})
+
     @BeforeMethod
+    @Parameters({"URL"})
     public static void getURL(String url){
         driver.get(url);
     }

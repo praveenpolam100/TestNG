@@ -1,8 +1,11 @@
 package com.lambda.tests;
 
 import com.lambdatest.pages.BaseClass;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -73,7 +76,7 @@ public class JavaScriptAlert extends BaseClass {
 
    }
 
-   @Test(priority = 4)
+   @Test(priority = 4, invocationCount = 5)
     public void bootstrapAlertautoHide(){
         driver.findElement(By.linkText("Bootstrap Alerts")).click();
         WebElement button1 = driver.findElement(By.xpath("//button[text()='Autoclosable Success Message']"));
@@ -101,6 +104,27 @@ public void normalSuccessMessage(){
     softAssert.assertTrue(message.contains("Normal success message. To close use the close button."));
     softAssert.assertAll();
     webElementClose.click();
+
+   }
+
+   @Test(priority = 6)
+   public void contextMenuwithjavaScriptAlert(){
+        driver.findElement(By.linkText("Context Menu")).click();
+        WebElement element = driver.findElement(By.id("hot-spot"));
+        Actions actions = new Actions(driver);
+        actions.contextClick(element).perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.alertIsPresent());
+        try{
+            int i = driver.switchTo().alert().hashCode();
+            if (i > 0){
+                driver.switchTo().alert().accept();
+
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
    }
 
