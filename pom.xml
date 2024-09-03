@@ -50,6 +50,7 @@
         <configuration>
           <suiteXmlFiles>
             <suiteXmlFile>grouping.xml</suiteXmlFile>
+            <suiteXmlFile>javascriptalert.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
