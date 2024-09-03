@@ -13,8 +13,8 @@ pipeline{
         stage('test'){
             steps{
                 echo 'Running Tests....'
-                timeout(time:10, unit: 'MINUTES'){
-                    //sh 'mvn clean test'
+                timeout(time:20, unit: 'MINUTES'){
+                    sh 'mvn clean test'
                 }
 
             }
