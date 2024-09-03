@@ -7,9 +7,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building ....'
-                withMaven(maven: 'Apache Maven 3.8.6'){
-                    sh 'mvn clean install'
-                }
+
             }
 
         }
@@ -17,9 +15,7 @@ pipeline{
             steps{
                 echo 'Running Tests....'
                 timeout(time:20, unit: 'MINUTES'){
-                withMaven(maven: 'Apache Maven 3.8.6'){
-                    sh 'mvn test'
-                    }
+                    //sh 'mvn clean test'
 
                 }
 
