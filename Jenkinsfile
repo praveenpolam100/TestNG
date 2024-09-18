@@ -15,7 +15,7 @@ pipeline{
             steps{
                 echo 'Running Tests....'
                 timeout(time:20, unit: 'MINUTES'){
-                    //sh 'mvn clean test'
+                    sh 'mvn clean test'
 
                 }
 
